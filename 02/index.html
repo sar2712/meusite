@@ -3,15 +3,17 @@
     <head>
         <title>JavaScript</title>
         <script>
+            var raiz = Math.sqrt(arg);
+
             function raizquadrada(num){
                 var raiz = Math.sqrt(num);
             }
             function escreveDiv(texto){
-                document.getElementByID("minhaDiv").innerHTML = texto;
+                document.getElementById("minhaDiv").innerHTML = texto;
             }
             function escreveDiv2(){
                 texto = prompt("digite qualquer coisa");
-                document.getElementByID("minhaDiv2").innerHTML = texto;
+                document.getElementById("minhaDiv2").innerHTML = texto;
             }
         </script>
 
@@ -31,7 +33,7 @@
         <div id="minhaDiv"></div>
         <hr>
         
-        <h1>Escrevendo na texto dinâmco</h1>
+        <h1>Escrevendo na texto dinâmico</h1>
         <button onclick="escreveDiv2()">Escrever</button><br><br>
         <div id="minhaDiv2"></div>
 
