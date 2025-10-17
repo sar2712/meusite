@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang pt-br>
+    <head>
+        <title>Arrays JavaScript</title>
+        <script>
+            let pilhapessoas = Array();
+            function pessoas();{
+                var nome = prompt("Digite o nome da pessoa que deseja adicionar:")
+                pilhapessoas.push(nome);
+                mostrarlista();
+            }
+            function posicaopessoas();{
+                var indice = prompt("Digite a pocição que deseja colsultar;")
+                indice = number(indice);
+                if (indice < 0 || indice >= pilhaspessoas.length);
+                alert(" posição invalida ")
+                return;
+                alert('na posição'+ indice + 'esta:'+ pilhaspessoas[indice])
+            }
+            function removerpessoas(){
+                if (pilhapessoas.length ===0){ alert('pilha esta vazia');}
+                else {
+                    let removido = pilhaspessoas.pop();
+                    alert(' removvida: ' + removido);
+                    mostrarlista();
+                }
+
+            }
+            function limparpessoas(){
+                pilhaspessoas = [] ;
+                mostrarlista();
+
+            }
+            function inverterpilha(){
+
+            }
+        </script>
+        
+        <script>
+            
+
+            function mostrarFrutas(){
+                const container = document.getElementById('minhaDiv2');
+                for (var i = 0; i < frutas.length; i++){
+                    var tag = '<h5>' + i + " - " + frutas[i] + '</h5>';
+                    container.innerHTML += tag;
+                }
+            }
+
+            function posicaoFrutas(){
+                var indice = prompt("Digite a posição da fruta que deseja consultar");
+                alert(frutas[indice]);
+                if (i > 7){
+                    alert("Índice inválido");
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>Lista de Pessoas</h1>
+        <button onclick="pessoas()">Adicionar pessoas</button>
+        <button onclick="posicaopessoas()">Posição</button>
+        <button onclick="removerpessoas()">Remover</button>
+        <button onclick="limparpessoas()">Limpar</button>
+        <button onclick="inverterpessoas()">Inverter Pilha</button>
+        
+        <div id="minhaDiv"></div>
+        <hr>
+
+       
+    </body>
+</html>
