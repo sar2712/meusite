@@ -3,36 +3,45 @@
     <head>
         <title>Arrays JavaScript</title>
         <script>
-            let pilhapessoas = Array();
+            let pilhasPessoas = Array();
+            function mostrarlista(){
+                const container = document.getElementById('minhaDiv');
+                container.innerHTML = "";
+                
+                for ( var i = 0; i < pilhasPessoas.length; i++){
+                    var tag = '<h5>' + i + " - " + pilhasPessoas [i] + '</h5>';
+                    container.innerHTML += tag;
+                }
+            }
             function pessoas();{
                 var nome = prompt("Digite o nome da pessoa que deseja adicionar:")
-                pilhapessoas.push(nome);
+                pilhasPessoas.push(nome);
                 mostrarlista();
             }
             function posicaopessoas();{
                 var indice = prompt("Digite a pocição que deseja colsultar;")
                 indice = number(indice);
-                if (indice < 0 || indice >= pilhaspessoas.length);
+                if (indice < 0 || indice >= pilhasPessoas.length);
                 alert(" posição invalida ")
                 return;
-                alert('na posição'+ indice + 'esta:'+ pilhaspessoas[indice])
+                alert('na posição'+ indice + 'esta:'+ pilhasPessoas[indice])
             }
             function removerpessoas(){
-                if (pilhapessoas.length ===0){ alert('pilha esta vazia');}
+                if (pilhasPessoas.length ===0){ alert('pilha esta vazia');}
                 else {
-                    let removido = pilhaspessoas.pop();
+                    let removido = pilhasPessoas.pop();
                     alert(' removvida: ' + removido);
                     mostrarlista();
                 }
 
             }
             function limparpessoas(){
-                pilhaspessoas = [] ;
+                pilhasPessoas = [] ;
                 mostrarlista();
 
             }
             function inverterpilha(){
-                
+
 
             }
         </script>
@@ -60,7 +69,7 @@
     </head>
     <body>
         <h1>Lista de Pessoas</h1>
-        <button onclick="pessoas()">Adicionar pessoas</button>
+        <button onclick="pilhaPessoas()">Adicionar pessoas</button>
         <button onclick="posicaopessoas()">Posição</button>
         <button onclick="removerpessoas()">Remover</button>
         <button onclick="limparpessoas()">Limpar</button>
