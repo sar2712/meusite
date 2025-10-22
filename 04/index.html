@@ -4,14 +4,14 @@
         <title>Arrays JavaScript</title>
         <script>
             let pilhasPessoas = Array();
-            function mostrarlista(){
+            function mostrarLista(){
                 const container = document.getElementById('minhaDiv');
                 container.innerHTML = "";
                 
-                for ( var i = 0; i < pilhasPessoas.length; i++){
-                    var tag = '<h5>' + i + " - " + pilhasPessoas [i] + '</h5>';
-                    container.innerHTML += tag;
-                }
+                    for ( var i = 0; i < pilhasPessoas.length; i++) {
+                        var tag = '<h5>' + i + " - " + pilhasPessoas[i] + '</h5>';
+                        container.innerHTML += tag;
+                    }
             }
             function pessoas();{
                 var nome = prompt("Digite o nome da pessoa que deseja adicionar:")
