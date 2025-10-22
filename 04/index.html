@@ -14,7 +14,7 @@
                     }
             }
             function adpessoas() {
-                var nome = prompt("Digite o nome da pessoa que deseja adicionar:")
+                let nome = prompt("Digite o nome da pessoa que deseja adicionar:")
                 pilhasPessoas.push(nome);
                 mostrarLista();
             }
@@ -22,7 +22,7 @@
 
         <script>
             function posicaopessoas() {
-                var indice = prompt("Digite a pocição que deseja colsultar: ")
+                var indice = prompt("Digite a pocição que deseja colsultar:")
                 indice = number(indice);
                 if (indice < 0 || indice >= pilhasPessoas.length) {
                     alert(" posição invalida ");
