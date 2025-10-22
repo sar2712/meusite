@@ -24,7 +24,7 @@
             function posicaopessoas() {
                 let indice = prompt("Digite a posição que deseja colsultar: ")
                  indice = Number(indice);
-                if indice < 0 || indice >= pilhasPessoas.length {
+                if ( isNaN(indice) < 0 || indice >= pilhasPessoas.length) {
                     alert(" posição invalida ");
                 return;
                 }
