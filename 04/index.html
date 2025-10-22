@@ -22,7 +22,7 @@
 
         <script>
             function posicaopessoas() {
-                var indice = prompt("Digite a pocição que deseja colsultar:")
+                let indice = prompt("Digite a pocição que deseja colsultar: ")
                 indice = number(indice);
                 if (indice < 0 || indice >= pilhasPessoas.length) {
                     alert(" posição invalida ");
@@ -47,7 +47,8 @@
             }
             function inverterpessoas(){
                 pilhasPessoas.reverse();
-                mostrarLista();   
+                mostrarLista();
+                
             }
         </script>
     
@@ -61,7 +62,6 @@
         <button onclick="inverterpessoas()">Inverter Pilha</button>
         
         <div id="minhaDiv"></div>
-        <hr>
-
+        <hr>  
     </body>
 </html>
