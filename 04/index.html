@@ -22,7 +22,7 @@
 
         <script>
             function posicaopessoas() {
-                let indice = prompt("Digite a pocição que deseja colsultar: ")
+                let indice = prompt("Digite a posição que deseja colsultar: ")
                 indice = number(indice);
                 if (indice < 0 || indice >= pilhasPessoas.length) {
                     alert(" posição invalida ");
@@ -32,7 +32,7 @@
             }
             function removerpessoas() {
                 if (pilhasPessoas.length === 0) { 
-                    alert('pilha esta vazia');
+                    alert('pilha está vazia');
                 } else {
                     let removido = pilhasPessoas.pop();
                     alert(' removido: ' + removido);
