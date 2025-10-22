@@ -22,13 +22,13 @@
 
         <script>
             function posicaopessoas() {
-                let indice = prompt("Digite a posição que deseja colsultar: ")
-                 indice = Number(indice);
-                if (isNaN(indice) || indice < 0 || indice >= pilhasPessoas.length) {
+                let indice = prompt("Digite a posição que deseja colsultar:")
+                indice = Number(indice);
+                if (indice < 0 || indice >= pilhasPessoas.length) {
                     alert(" posição invalida ");
                 return;
                 }
-                alert('Na posição'+ indice + 'está: '+ pilhasPessoas[indice]);
+                alert('Na posição'+ indice + 'está:'+ pilhasPessoas[indice]);
             }
             function removerpessoas() {
                 if (pilhasPessoas.length === 0) { 
