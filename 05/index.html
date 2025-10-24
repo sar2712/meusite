@@ -6,27 +6,27 @@
 
   <script>
     
-    let pilhas = [];
+    let pilhasLivros = [];
 
     function mostrarLista() {
       const container = document.getElementById('minhaDiv');
       container.innerHTML = ''; 
 
-      for (let i = 0; i < pilhaPessoas.length; i++) {
-        const pessoa = pilhaPessoas[i];
-        const tag = '<h5>' + i + '- Nome: ' + pessoa.nome + ' | Contato: '+ pessoa.contato + '</h5>';
+      for (let i = 0; i < pilhasLivros.length; i++) {
+        const livro = pilhasLivros[i];
+        const tag = '<h5>' + i + '- Titulo: ' + livro.nome + ' | Autor: '+ livro.autor + '</h5>';
         container.innerHTML += tag;
       }
     }
 	
 	function limpaCampos() {
-	  document.getElementById('nome').value = '';
-      document.getElementById('contato').value = '';
+	  document.getElementById('titulo').value = '';
+      document.getElementById('autor').value = '';
 	}
 
     function adicionar() {
 	  // pega os valores digitados nos inputs
-  	  const nome = document.getElementById('nome').value;
+  	  const titulo = document.getElementById('nome').value;
       const contato = document.getElementById('contato').value;
 
       pilhaPessoas.push({ nome, contato });
@@ -39,45 +39,45 @@
     function posicao() {
       const indice = Number(prompt('Qual posição da lista deseja consultar?'));
 
-      if (indice < 0 || indice >= pilhaPessoas.length) {
+      if (indice < 0 || indice >= pilhasLivros.length) {
         alert('Posição inválida!');
         return;
       }
 
-      const pessoa = pilhaPessoas[indice];
-      alert('Na posição ' + indice + ' está: Nome: ' + pessoa.nome + ' - Contato: ' + pessoa.contato);
+      const livro = pilhasLivros[indice];
+      alert('Na posição ' + indice + ' está: Titulo: ' + livro.titulo + ' - Autor: ' + livro.autor);
     }
 
     function limparLista() {
-      pilhaPessoas = [];
+      pilhaLivros = [];
       mostrarLista();
     }
 
     function remover() {
-      if (pilhaPessoas.length === 0) {
+      if (pilhaLivros.length === 0) {
         alert('A pilha está vazia!');
       } else {
-        const removido = pilhaPessoas.pop();
-        alert('Removido: ' + removido.nome + ' - ' + removido.contato);
+        const removido = pilhaLivros.pop();
+        alert('Removido: ' + removido.titulo + ' - ' + removido.autor);
         mostrarLista();
       }
     }
 
     function inverterPilha() {
-      pilhaPessoas.reverse();
+      pilhaLivros.reverse();
       mostrarLista();
     }
   </script>
 </head>
 
 <body>
-  <h1>Lista de Pessoas</h1>
+  <h1>Lista de Livros</h1>
 
-	<label>Nome:</label>
-	<input type="text" id="nome" placeholder="Digite o nome"> 
+	<label>Título:</label>
+	<input type="text" id="titulo" placeholder="Digite o título do livro">> 
 
-	<label>Contato:</label>
-	<input type="text" id="contato" placeholder="Digite o contato">
+	<label>Autor:</label>
+	<input type="text" id="autor" placeholder="Digite o autor do livro">
 
 	<button onclick="adicionar()">Adicionar</button>
 	
