@@ -10,7 +10,7 @@
     
   <script>
     
-    let pilhaPessoas = [];
+    let pilhaCursos = [];
 	
 	let indiceEdicao = null; // controla se estamos editando alguém
 
@@ -18,13 +18,14 @@
       const corpo = document.getElementById('tabelaCorpo');
       corpo.innerHTML = ''; // limpa o corpo da tabela
 
-      for (let i = 0; i < pilhaPessoas.length; i++) {
-        const pessoa = pilhaPessoas[i];
+      for (let i = 0; i < pilhaCursos.length; i++) {
+        const curso = pilhaCursos[i];
 		const linha =
 		  "<tr>" +
 			"<td>" + i + "</td>" +
-			"<td>" + pessoa.nome + "</td>" +
-			"<td>" + pessoa.contato + "</td>" +
+			"<td>" + curso.nome + "</td>" +
+			"<td>" + curso.regime + "</td>" +
+            "<td>" + curso.carga + "</td>" +
 			"<td>" +
 				"<div class='mt-3 d-flex gap-2'>" +
 				  "<button class='btn btn-secondary' onclick='editarContato(" + i + ")'>Editar</button>" +
@@ -39,60 +40,69 @@
 	
 	function limpaCampos() {
 	  document.getElementById('nome').value = '';
-      document.getElementById('contato').value = '';
+      document.getElementById('regime').value = '';
+      document.getElementById('carga').value = '';
 	}
 
 
     function posicao() {
       const indice = Number(prompt('Qual posição da lista deseja consultar?'));
 
-      if (indice < 0 || indice >= pilhaPessoas.length) {
+      if (indice < 0 || indice >= pilhaCursos.length) {
         alert('Posição inválida!');
         return;
       }
 
-      const pessoa = pilhaPessoas[indice];
+      const pessoa = pilhacursos[indice];
       alert('Na posição ' + indice + ' está: Nome: ' + pessoa.nome + ' - Contato: ' + pessoa.contato);
     }
 
     function limparLista() {
-      pilhaPessoas = [];
+      pilhaCursos = [];
       mostrarLista();
     }
 
     function remover() {
-      if (pilhaPessoas.length === 0) {
+      if (pilhaCursos.length === 0) {
         alert('A pilha está vazia!');
       } else {
-        const removido = pilhaPessoas.pop();
-        alert('Removido: ' + removido.nome + ' - ' + removido.contato);
+        const removido = pilhaCursos.pop();
+        alert('Removido: ' + removido.nome + ' - ' + removido.regime + ' - ' + removido.carga);
         mostrarLista();
       }
     }
 
     function inverterPilha() {
-      pilhaPessoas.reverse();
+      pilhaCursos.reverse();
       mostrarLista();
     }
 	
 	function salvar() {
-		const nome =  document.getElementById('nome').value.trim();// implementar função salvar
-        const contato = document.getElementById('contato').value.trim();
+		// implementar função salvar
+        const nome =  document.getElementById('nome').value.trim();
+        const regime =  document.getElementById('regime').value.trim();
+        const carga = document.getElementById('carga').value.trim();
 
         if (indiceEdicao === null) {
-            pilhaPessoas.push({ nome, contato });
+            pilhaCursos.push({ nome, regime, carga });
         } else {
-            pilhaPessoas[indiceEdicao]= { nome, contato };
+            pilhaCursos[indiceEdicao]= { nome, regime, carga };
             indiceEdicao = null;
         }
         
         document.getElementById('nome').value = '';
-        document.getElementById('contato').value = '';
+        document.getElementById('regime').value = '';
+        document.getElementById('carga').value = '';
         mostrarLista();
     }
 
-   function editarContato(indice) {
+   function editarCurso(indice) {
       // implementar a função editar a partir de um indice
+      const curso = pilhaCursos[indice];
+      document.getElementById('nome').value = curso.nome;
+      document.getElementById('regime').value = curso.nome;
+      document.getElementById('carga').value = curso.carga;
+      indiceEdicao = indice;
     }
 	
 	function removerContato(indice) {
@@ -106,20 +116,25 @@
 
 <body>
   <div class="container mt-5">
-    <h1 class="mb-4 text-center">Cadastro de Pessoas</h1>
+    <h1 class="mb-4 text-center">Cadastro de Cursos</h1>
 	
 	
 	<div class="card p-4 shadow-sm">
       <div class="row g-3">
 	  
         <div class="col-md-5">
-          <label class="form-label">Nome</label>
-          <input type="text" id="nome" class="form-control" placeholder="Digite o nome">
+          <label class="form-label">Nome do Curso</label>
+          <input type="text" id="nome" class="form-control" placeholder="Ex: Programação Web;">
         </div>
 
         <div class="col-md-5">
-          <label class="form-label">Contato</label>
-          <input type="text" id="contato" class="form-control" placeholder="Digite o contato">
+          <label class="form-control">Regime</label>
+          <input type="text" id="regime" class="form-control" placeholder="Ex: Selecione...">
+        </div>
+
+        <div class="col-md-5">
+          <label class="form-label">Carga Horária</label>
+          <input type="text" id="carga" class="form-control" placeholder="Ex: 100 horas">
         </div>
 
 
