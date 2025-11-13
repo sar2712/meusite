@@ -44,7 +44,7 @@
             }
 
             const livro = pilhaLivros[indice];
-            alert('Na posição ' + indice + ' está: Titulo: ' + livro.titulo + ' - Autor: ' + livro.autor);
+            alert('Na posição ' + indice + ' está: Titulo: ' + livro.titulo + ' - Autor: ' + livro.autor + ' - Ano: ' + livro.ano);
           }
 
           function limparLista() {
@@ -57,12 +57,12 @@
               alert('A pilha está vazia!');
             } else {
               const removido = pilhaLivros.pop();
-              alert('Removido: ' + removido.titulo + ' - ' + removido.autor);
+              alert('Removido: ' + removido.titulo + ' - ' + removido.autor + ' - ' + removido.ano);
               mostrarLista();
             }
           }
 
-          function inverterPilha() {
+          function inverterpilha() {
             pilhaLivros.reverse();
             mostrarLista();
           }
@@ -89,7 +89,7 @@
         <button onclick="posicao()">Posição</button>
         <button onclick="remover()">Remover Último</button>
         <button onclick="limparLista()">Limpar Lista</button>
-        <button onclick="inverterPilha()">Inverter</button>
+        <button onclick="inverterpilha()">Inverter</button>
 
         <br><br>
       
