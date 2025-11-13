@@ -17,12 +17,12 @@
             function mostrarLinguagens(){
                 const container = document.getElementById('minhaDiv');
                 for (var i = 0; i < linguagem.length; i++){
-                    var tag = '<h5>' + i + " - " + liguagem[i] + '</h5>';
+                    var tag = '<h5>' + i + " - " + linguagem[i] + '</h5>';
                     container.innerHTML += tag;
                 }
             }
 
-            function posicaoLinguagem(){
+            function posicaoLinguagens(){
                 var indice = prompt("Digite a posição da linguagem que deseja consultar");
                 alert(linguagem[indice]);
                 if (i > 7){
@@ -63,13 +63,13 @@
     <body>
         <h1>Array de linguagem</h1>
         <button onclick="mostrarLinguagens()">Criar Array</button><br><br>
-        <button onclick="posicaoLinguagem()">Posição no Array</button>
+        <button onclick="posicaoLinguagens()">Posição no Array</button>
         <div id="minhaDiv"></div>
         <hr>
 
         <h1>Array de frutas</h1>
         <button onclick="mostrarFrutas()">Criar Array</button><br><br>
-        <button onclick="posicaoFruta()">Posição no Array</button>
+        <button onclick="posicaoFrutas()">Posição no Array</button>
         <div id="minhaDiv2"></div>
     </body>
 </html>
