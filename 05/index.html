@@ -20,7 +20,7 @@
 
           for (let i = 0; i < pilhaLivros.length; i++) {
             const livro = pilhaLivros[i];
-            const tag = '<h5>' + i + '- Titulo: ' + livro.nome + ' | Autor: '+ livro.autor + ' </h5>';
+            const tag = '<h5>' + i + '- Titulo: ' + livro.titulo + ' | Autor: '+ livro.autor + ' | Ano: '+ livro.ano + '</h5>';
             container.innerHTML += tag;
           }
         }
@@ -38,7 +38,6 @@
       
           function posicao() {
             const indice = Number(prompt('Qual posição da lista deseja consultar?'));
-
             if (indice < 0 || indice >= pilhaLivros.length) {
               alert('Posição inválida!');
               return;
